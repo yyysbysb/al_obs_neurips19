@@ -1,0 +1,44 @@
+{
+	"data": {
+		"prop_train": 0.8,
+		"q0": 0.00001,
+		"suggested_prop_log": 0.2,
+		"max_sz": 6000
+	},
+	"model": {        
+		"c0s": [0.01, 0.04, 0.16, 0.64, 2.56, 10.24],
+		"learning_rates": [0.0001, 0.0004, 0.0016, 0.0064, 0.0256, 0.1024, 0.4096, 1],
+		"c0s_fast": [],
+		"learning_rates_fast": [],
+		"opt_method": "gd_shuffle",
+		"opt_shuffle": true,
+		"opt_var_subsample_size": 1000,
+		"opt_var_iter_per_update": 10,
+		"init_log_prop": 0.3
+	},
+	"experiment": {		
+		"debug": false,
+		"dynamic_log_size": true,
+		"rand_seed": 42,	
+
+		"num_processes": 8,
+        "tune_iter": 16,
+		"final_iter": 16,
+
+		"batch_sz": 10,
+		"batch_rate": 1.5,
+		"suggested_label_budget": -1,
+
+		"logscale_flag": false,
+		"extra_tail": 1,
+
+		"policy_set": ["Uncertainty", "Certainty"],		
+		"dataset_set": ["synthetic"],
+		"algos": ["passive_is_v2", "idbal", "active_mis_vc_debias_clipcap_v2"],
+
+		
+		"experiment_name": "result",
+		"result_root_path": "./"
+	},
+	"default_env_fields": ["experiment", "policy", "model", "run", "tmp"]
+}
